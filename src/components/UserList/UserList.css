@@ -1,0 +1,16 @@
+.list {
+  list-style-position: inside;
+  margin-left: 40vw;
+  margin-right: auto;
+  line-height: 3em;
+}
+
+li {
+  color: gray;
+  text-align: justify;
+}
+li span {
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+}
