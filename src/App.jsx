@@ -21,7 +21,7 @@ function App() {
         value={searchTerm}
         onChange={handleChange}
       />
-      <UserList />
+      <UserList searchTerm={searchTerm} />
     </div>
   );
 }
