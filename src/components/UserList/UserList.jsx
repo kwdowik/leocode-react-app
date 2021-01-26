@@ -27,15 +27,15 @@ function UserList(props) {
   const data = searchResults;
 
   return (
-    <ol className="list">
+    <ol className="list" data-testid="list" id="list">
       {data.length ? (
-        data.map((user) => (
-          <li>
+        data.map((user, index) => (
+          <li key={index}>
             <span>{user.name}</span> @{user.username}
           </li>
         ))
       ) : (
-        <li></li>
+        <li>{"Loading..."}</li>
       )}
     </ol>
   );
