@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./UserList.css";
-import users from "../../Services/userApi";
+import users from "../../services/userApi";
+import ListItem from "../../app/components/ListItem/ListItem";
 
 const getUsers = async () => {
-  const usersResponse = await users().then((response) => response);
+  const usersResponse = await users();
   return usersResponse;
 };
 
@@ -29,10 +30,8 @@ function UserList(props) {
   return (
     <ol className="list" data-testid="list" id="list">
       {data.length ? (
-        data.map((user, index) => (
-          <li key={index}>
-            <span>{user.name}</span> @{user.username}
-          </li>
+        data.map((user) => (
+          <ListItem id={user.id} name={user.name} username={user.username} />
         ))
       ) : (
         <li>{"Loading..."}</li>

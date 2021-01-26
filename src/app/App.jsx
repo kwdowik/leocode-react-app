@@ -1,5 +1,5 @@
-import "./App.css";
-import UserList from "./components/UserList/UserList.jsx";
+import "./styles/App.css";
+import UserList from "../features/UserList/UserList.jsx";
 import React, { useState } from "react";
 
 function App() {
