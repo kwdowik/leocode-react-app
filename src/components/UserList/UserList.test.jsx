@@ -7,10 +7,11 @@ import {
 import UserList from "./UserList.jsx";
 
 test("search query 'gra' only returns 'Leanne Graham' list element", async () => {
-  const { getByTestId } = render(<UserList searchTerm={"gra"} />);
+  render(<UserList searchTerm={"gra"} />);
+  console.log(screen.debug);
   await waitForElementToBeRemoved(() => screen.queryByText("Loading...")).then(
     () => {
-      const list = getByTestId("list");
+      const list = screen.getByTestId("list");
       expect(list).toContainHTML("<li><span>Leanne Graham</span> @Bret</li>");
     }
   );
