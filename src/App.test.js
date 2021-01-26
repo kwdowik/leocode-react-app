@@ -1,8 +1,20 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+import userEvent from "@testing-library/user-event";
+
+test("renders app's title", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/Users list/);
+  expect(titleElement).toBeInTheDocument();
+});
+
+test("if search bar changes state when typing", () => {
+  render(<App />);
+  let searchBar = screen.getByPlaceholderText(/Search by user name.../);
+  //console.log("the bar", searchBar);
+  userEvent.type(searchBar, "Hello, World!");
+  expect(screen.getByPlaceholderText(/Search by user name.../)).toHaveValue(
+    "Hello, World!"
+  );
 });
