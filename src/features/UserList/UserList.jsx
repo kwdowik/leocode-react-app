@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./UserList.css";
-import users from "../../services/userApi";
+import users from "../../Services/userApi.js";
 import ListItem from "../../app/components/ListItem/ListItem";
 
 const getUsers = async () => {
