@@ -17,9 +17,9 @@ test("if search bar changes state when typing", () => {
 
   const searchBar = screen.getByPlaceholderText(/Search by user name.../);
 
-  userEvent.type(searchBar, "Hello, World!");
+  userEvent.type(searchBar, "Hello, World");
 
-  const expectedValue = "Hello, World!";
+  const expectedValue = "Hello, World";
 
   expect(screen.getByPlaceholderText(/Search by user name.../)).toHaveValue(
     expectedValue
